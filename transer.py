@@ -1,4 +1,5 @@
 import re
+import os
 
 def truncate_after_substring(input_str, substring):
     # 查找子字符串的位置
@@ -63,6 +64,8 @@ def read_and_write_file(input_file, output_file):
         print(f"发生错误: {e}")
 
 # 调用函数
-input_file = 'input.txt'
+input_file = 'medium.txt'
 output_file = 'output.txt'
 read_and_write_file(input_file, output_file)
+
+os.remove("medium.txt")

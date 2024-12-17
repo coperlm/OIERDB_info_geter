@@ -4,10 +4,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import subprocess
+
 
 def fetch_oier_info(name):
     # 设置Chrome WebDriver的路径，确保指向的是具体的chromedriver.exe文件
-    driver_path = r'D:\daily_apps\chromedriver-win64\chromedriver.exe'  # 请确保路径正确
+    driver_path = r'chromedriver.exe'  # 请确保路径正确
     url = f'https://oier.baoshuo.dev/?query={name}'  # 直接构造URL
 
     # 使用Service来管理驱动路径
@@ -50,21 +52,25 @@ def read_names_from_file(filename):
     with open(filename, "r", encoding="utf-8") as file:
         names = [line.strip() for line in file if line.strip()]
     return names
-names_file = "all_names.txt"  # 包含待查询姓名的文件
+names_file = "input.txt"  # 包含待查询姓名的文件
 names = read_names_from_file(names_file)
 
 # 将所有页面源代码保存到一个txt文件
-with open("output_pages.txt", "w", encoding="utf-8") as file:
+with open("medium.txt", "w", encoding="utf-8") as file:
     for name in names:
         page_source = fetch_oier_info(name)
         if page_source:
             # 写入文件
-            if '高中毕业 1 年' in page_source:
-                file.write(f"Page source for {name}:{page_source}\n")
-            else:
-                file.write(f"Page source for {name}:no info\n")
+            file.write(f"Page source for {name}:{page_source}\n")
+            # if '高中毕业 1 年' in page_source:
+            #     file.write(f"Page source for {name}:{page_source}\n")
+            # else:
+            #     file.write(f"Page source for {name}:no info\n")
         else:
             # 如果获取失败，写入失败信息
             file.write(f"Error fetching data for {name}\n")
 
 print("Page sources saved to oier_page_sources.txt")
+
+# 运行 a.exe
+subprocess.run(["transer.exe"], check=True)
