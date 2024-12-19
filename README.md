@@ -4,7 +4,7 @@
 
 ### 使用方法
 
-1. 下载适配自己谷歌浏览器版本的`chromedriver.exe`（下载链接：https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-cn#current_releases，release中的版本为`131.0.6778.108`）替换release中的`chromedriver.exe`
+1. 下载适配自己谷歌浏览器版本的`chromedriver.exe`（下载链接：https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-cn#current_releases，release中的版本为 `131.0.6778.108`）替换release中的`chromedriver.exe`
 2. 在`input.txt`中输入想要搜索的名称（仿照样例，一个一行）
 3. 双击`main.exe`开始运行
 4. 等待一段时间，待`medium.txt`消失，`output.txt`即为输出结果
