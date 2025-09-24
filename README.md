@@ -1,10 +1,16 @@
-此代码用于已知很多人的名字，筛选出获奖的
+## UPD250924 
+
+时隔一年经测试不能再使用（包括但不限于浏览器版本不适配等问题），后发现数据库是开源的，故不再维护该仓库
+
+后续考虑就[数据库](https://github.com/OIerDb-ng/OIerDb-data-generator)重新开发高效检索工具
 
 ---
 
+此代码用于已知很多人的名字，筛选出获奖的
+
 ### 使用方法
 
-1. 下载适配自己谷歌浏览器版本的`chromedriver.exe`（下载链接：https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-cn#current_releases，release中的版本为 `131.0.6778.108`）替换release中的`chromedriver.exe`
+1. 下载适配自己谷歌浏览器版本的`chromedriver.exe`（下载链接：https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-cn#current_releases ，release中的版本为 `131.0.6778.108`）替换release中的`chromedriver.exe`
 2. 在`input.txt`中输入想要搜索的名称（仿照样例，一个一行）
 3. 双击`main.exe`开始运行
 4. 等待一段时间，待`medium.txt`消失，`output.txt`即为输出结果
